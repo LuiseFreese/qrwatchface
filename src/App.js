@@ -43,7 +43,7 @@ const App = () => {
                 </NavLink>
               </li>
               <li>
-                <a href="https://github.com/LuiseFreese" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/LuiseFreese/QRWatchface" target="_blank" rel="noopener noreferrer">
                   GitHub
                 </a>
               </li>

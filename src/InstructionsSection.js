@@ -9,7 +9,7 @@ const InstructionsSection = () => (
     </h2>
     <StepList />
     <div className="instructions-footer">
-      <p>Need help? Find this project on <a href="https://github.com/LuiseFreese" target="_blank" rel="noopener noreferrer">GitHub</a> for support and updates.</p>
+      <p>Need help? Find this project on <a href="https://github.com/LuiseFreese/QRWatchface" target="_blank" rel="noopener noreferrer">GitHub</a> for support and updates.</p>
     </div>
   </div>
 );
