@@ -709,12 +709,89 @@ body.dark-mode .instructions-footer a:hover {
 
 @media (max-width: 480px) {
   .apple-hero {
-    padding-top: 90px !important;
+    padding-top: 120px !important;
   }
   
   .apple-hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.0rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .apple-hero-subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 28px !important;
+  }
+  
+  .top-menu {
+    padding: 8px 16px 8px 16px;
+  }
+  
+  .theme-toggle {
+    min-width: 70px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 430px) and (min-width: 391px) {
+  .apple-hero {
+    padding-top: 130px !important;
+  }
+  
+  .apple-hero-title {
+    font-size: 1.9rem !important;
+    margin-bottom: 18px !important;
+  }
+  
+  .apple-hero-subtitle {
+    font-size: 1.05rem !important;
+    margin-bottom: 26px !important;
+  }
+  
+  .top-menu {
+    padding: 8px 16px 8px 16px;
+  }
+  
+  .theme-toggle {
+    min-width: 65px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  
+  .switch {
+    width: 32px;
+    height: 19px;
+  }
+}
+
+@media (max-width: 390px) {
+  .apple-hero {
+    padding-top: 130px !important;
+  }
+  
+  .apple-hero-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .apple-hero-subtitle {
+    font-size: 1.0rem !important;
     margin-bottom: 24px !important;
+  }
+  
+  .top-menu {
+    padding: 6px 12px 6px 12px;
+  }
+  
+  .theme-toggle {
+    min-width: 60px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  
+  .switch {
+    width: 30px;
+    height: 18px;
   }
 }
 
