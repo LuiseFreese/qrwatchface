@@ -5,9 +5,13 @@ import InstructionsSection from './InstructionsSection';
 
 const InstructionsPage = () => {
   return (
-    <div className="container apple-hero">
-      <InstructionsHeader />
-      <InstructionsSection />
+    <div className="instructions-container">
+      <div className="instructions-header">
+        <InstructionsHeader />
+      </div>
+      <div className="instructions-content">
+        <InstructionsSection />
+      </div>
     </div>
   );
 };
