@@ -73,3 +73,6 @@ Feel free to submit pull requests for bug fixes, new features, or improvements. 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+Documentation written with GitHub Copilot 😛
+
