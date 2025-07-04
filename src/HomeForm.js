@@ -51,7 +51,7 @@ const HomeForm = ({ url, setUrl, handleDownload }) => {
       <div className="qrContainer" style={{ position: 'relative' }}>
         {url && (
           <div ref={qrCanvasRef} className={`qrWrapper ${isGenerating ? 'generating' : ''}`} style={{margin: '0 auto'}}>
-            <QRCodeCanvas value={url} size={150} />
+            <QRCodeCanvas value={url} size={120} />
             {isGenerating && (
               <div className="qr-loading-overlay" style={{
                 position: 'absolute',
@@ -68,6 +68,17 @@ const HomeForm = ({ url, setUrl, handleDownload }) => {
                 <div className="spinner" />
               </div>
             )}
+          </div>
+        )}
+        {url && (
+          <div style={{
+            textAlign: 'center',
+            marginTop: '12px',
+            fontSize: '0.85rem',
+            color: '#64748b',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif'
+          }}>
+            Optimized for Apple Watch display
           </div>
         )}
       </div>
