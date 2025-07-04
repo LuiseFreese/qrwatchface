@@ -709,17 +709,21 @@ body.dark-mode .instructions-footer a:hover {
 
 @media (max-width: 480px) {
   .apple-hero {
-    padding-top: 120px !important;
+    padding-top: 140px !important;
   }
   
   .apple-hero-title {
-    font-size: 2.0rem !important;
-    margin-bottom: 20px !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 16px !important;
   }
   
   .apple-hero-subtitle {
-    font-size: 1.1rem !important;
-    margin-bottom: 28px !important;
+    font-size: 1.0rem !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .apple-hero-image-row {
+    margin-bottom: 40px !important;
   }
   
   .top-menu {
@@ -733,19 +737,24 @@ body.dark-mode .instructions-footer a:hover {
   }
 }
 
+/* iPhone 14 and similar devices */
 @media (max-width: 430px) and (min-width: 391px) {
   .apple-hero {
-    padding-top: 130px !important;
+    padding-top: 150px !important;
   }
   
   .apple-hero-title {
-    font-size: 1.9rem !important;
-    margin-bottom: 18px !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 14px !important;
   }
   
   .apple-hero-subtitle {
-    font-size: 1.05rem !important;
-    margin-bottom: 26px !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 45px !important;
+  }
+  
+  .apple-hero-image-row {
+    margin-bottom: 45px !important;
   }
   
   .top-menu {
@@ -766,17 +775,21 @@ body.dark-mode .instructions-footer a:hover {
 
 @media (max-width: 390px) {
   .apple-hero {
-    padding-top: 130px !important;
+    padding-top: 160px !important;
   }
   
   .apple-hero-title {
-    font-size: 1.8rem !important;
-    margin-bottom: 16px !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 12px !important;
   }
   
   .apple-hero-subtitle {
-    font-size: 1.0rem !important;
-    margin-bottom: 24px !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 50px !important;
+  }
+  
+  .apple-hero-image-row {
+    margin-bottom: 50px !important;
   }
   
   .top-menu {
