@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  transition: all 0.3s ease;
 }
 
 .apple-hero-title {
@@ -18,6 +19,16 @@
   margin-bottom: 32px;
   text-align: center;
   line-height: 1.1;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.apple-hero-description {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #222;
+  font-size: 1.18rem;
+  margin-bottom: 24px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .apple-hero-image-row {
@@ -36,6 +47,12 @@
   box-shadow: none;
   background: transparent;
   display: block;
+  transition: all 0.4s ease;
+}
+
+.applewatch-hero-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .apple-hero-steps {
@@ -45,14 +62,6 @@
   box-shadow: none;
   border-radius: 0;
   padding: 0 12px;
-}
-
-.apple-hero-description {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  color: #222;
-  font-size: 1.18rem;
-  margin-bottom: 24px;
-  text-align: center;
 }
 
 .apple-hero-input {
@@ -65,69 +74,14 @@
   box-shadow: none;
   outline: none;
   margin-bottom: 0;
+  transition: all 0.3s ease;
+  transform: translateY(0);
 }
 
-body.dark-mode .apple-hero {
-  background: linear-gradient(180deg, #232323 0%, #222 100%);
-}
-body.dark-mode .apple-hero-title {
-  color: #f4f4f4;
-}
-body.dark-mode .apple-hero-description {
-  color: #f4f4f4;
-}
-body.dark-mode .apple-hero-input {
-  background: #333;
-  color: #f4f4f4;
-  border: 1.5px solid #555;
-}
-.apple-hero {
-  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
-  min-height: 100vh;
-  padding-top: 60px;
-  padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.apple-hero-title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: -1px;
-  color: #111;
-  margin-bottom: 32px;
-  text-align: center;
-  line-height: 1.1;
-}
-
-.apple-hero-image-row {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  margin-bottom: 32px;
-  overflow-x: auto;
-}
-
-.applewatch-hero-photo {
-  width: 420px;
-  max-width: 90vw;
-  border-radius: 20px;
-  box-shadow: none;
-  background: transparent;
-  display: block;
-}
-
-.apple-hero-steps {
-  max-width: 520px;
-  margin: 0 auto;
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0 12px;
+.apple-hero-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.15);
+  border-color: #007aff;
 }
 
 .apple-hero-steps-title {
@@ -183,6 +137,14 @@ body.dark-mode .apple-hero {
 body.dark-mode .apple-hero-title {
   color: #f4f4f4;
 }
+body.dark-mode .apple-hero-description {
+  color: #f4f4f4;
+}
+body.dark-mode .apple-hero-input {
+  background: #333;
+  color: #f4f4f4;
+  border: 1.5px solid #555;
+}
 body.dark-mode .apple-hero-steps-title {
   color: #4a90e2;
 }
@@ -196,55 +158,6 @@ body.dark-mode .apple-steps li::before {
 }
 body.dark-mode .applewatch-hero-photo {
   box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-}
-.apple-steps {
-  counter-reset: apple-step;
-  list-style: none;
-  padding: 0;
-  margin: 0 0 18px 0;
-}
-.apple-steps li {
-  display: flex;
-  align-items: flex-start;
-  font-size: 1.08rem;
-  margin-bottom: 14px;
-  line-height: 1.5;
-  background: #f7f8fa;
-  border-radius: 8px;
-  padding: 10px 12px 10px 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-  position: relative;
-  transition: background 0.2s;
-  min-height: 38px;
-}
-.apple-steps li::before {
-  counter-increment: apple-step;
-  content: counter(apple-step);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #fff;
-  background: linear-gradient(135deg, #007aff 60%, #00c6fb 100%);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  margin-right: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  flex-shrink: 0;
-  border: 2px solid #fff;
-}
-.applewatch-photo {
-  width: 220px;
-  max-width: 90vw;
-  border-radius: 16px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 body.dark-mode .apple-steps li {
   background: #333;
@@ -311,6 +224,13 @@ body.dark-mode .applewatch-photo {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
   display: inline-block;
   text-align: center;
+  animation: fadeInScale 0.5s ease-out;
+  transition: all 0.3s ease;
+}
+
+.qrWrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .downloadButton {
@@ -322,7 +242,18 @@ body.dark-mode .applewatch-photo {
   border-radius: 25px;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 122, 255, 0.25);
+  background: linear-gradient(135deg, #007aff 0%, #0056b3 100%);
+}
+
+.downloadButton:active {
+  transform: translateY(0);
 }
 
 .footer {
@@ -486,6 +417,15 @@ body.dark-mode .heart {
   color: #FF69B4;
 }
 
+body.dark-mode .top-menu {
+  background-color: #1c1c1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .menu-links a {
+  color: #4a90e2;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 15px;
@@ -494,6 +434,10 @@ body.dark-mode .heart {
   .input {
     width: 100%;
     max-width: 100%;
+  }
+
+  .apple-hero {
+    padding-top: 80px;
   }
 
   .top-menu {
@@ -506,5 +450,45 @@ body.dark-mode .heart {
     min-width: 60px;
     padding-left: 8px;
     overflow: visible;
+  }
+}
+
+/* Fix for mobile navbar overlap */
+.apple-hero {
+  padding-top: 80px !important;
+}
+
+/* Additional mobile-specific fixes */
+@media (max-width: 480px) {
+  .apple-hero {
+    padding-top: 90px !important;
+  }
+  
+  .apple-hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 24px !important;
+  }
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
