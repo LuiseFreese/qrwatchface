@@ -1,0 +1,510 @@
+.apple-hero {
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.apple-hero-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #111;
+  margin-bottom: 32px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.apple-hero-image-row {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.applewatch-hero-photo {
+  width: 420px;
+  max-width: 90vw;
+  border-radius: 20px;
+  box-shadow: none;
+  background: transparent;
+  display: block;
+}
+
+.apple-hero-steps {
+  max-width: 520px;
+  margin: 0 auto;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 12px;
+}
+
+.apple-hero-description {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  color: #222;
+  font-size: 1.18rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.apple-hero-input {
+  border-radius: 12px;
+  border: 1.5px solid #d1d3d8;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  background: #fff;
+  color: #222;
+  box-shadow: none;
+  outline: none;
+  margin-bottom: 0;
+}
+
+body.dark-mode .apple-hero {
+  background: linear-gradient(180deg, #232323 0%, #222 100%);
+}
+body.dark-mode .apple-hero-title {
+  color: #f4f4f4;
+}
+body.dark-mode .apple-hero-description {
+  color: #f4f4f4;
+}
+body.dark-mode .apple-hero-input {
+  background: #333;
+  color: #f4f4f4;
+  border: 1.5px solid #555;
+}
+.apple-hero {
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.apple-hero-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #111;
+  margin-bottom: 32px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.apple-hero-image-row {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.applewatch-hero-photo {
+  width: 420px;
+  max-width: 90vw;
+  border-radius: 20px;
+  box-shadow: none;
+  background: transparent;
+  display: block;
+}
+
+.apple-hero-steps {
+  max-width: 520px;
+  margin: 0 auto;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0 12px;
+}
+
+.apple-hero-steps-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #007aff;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.apple-steps {
+  counter-reset: apple-step;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.apple-steps li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+  line-height: 1.5;
+  background: none;
+  border-radius: 0;
+  padding: 0 0 0 0;
+  box-shadow: none;
+  position: relative;
+  min-height: 38px;
+}
+.apple-steps li::before {
+  counter-increment: apple-step;
+  content: counter(apple-step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #007aff 60%, #00c6fb 100%);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  box-shadow: none;
+  flex-shrink: 0;
+  border: 2px solid #fff;
+}
+
+body.dark-mode .apple-hero {
+  background: linear-gradient(180deg, #232323 0%, #222 100%);
+}
+body.dark-mode .apple-hero-title {
+  color: #f4f4f4;
+}
+body.dark-mode .apple-hero-steps-title {
+  color: #4a90e2;
+}
+body.dark-mode .apple-steps li {
+  color: #f4f4f4;
+}
+body.dark-mode .apple-steps li::before {
+  background: linear-gradient(135deg, #4a90e2 60%, #007aff 100%);
+  color: #fff;
+  border: 2px solid #232323;
+}
+body.dark-mode .applewatch-hero-photo {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.apple-steps {
+  counter-reset: apple-step;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.apple-steps li {
+  display: flex;
+  align-items: flex-start;
+  font-size: 1.08rem;
+  margin-bottom: 14px;
+  line-height: 1.5;
+  background: #f7f8fa;
+  border-radius: 8px;
+  padding: 10px 12px 10px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  position: relative;
+  transition: background 0.2s;
+  min-height: 38px;
+}
+.apple-steps li::before {
+  counter-increment: apple-step;
+  content: counter(apple-step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  background: linear-gradient(135deg, #007aff 60%, #00c6fb 100%);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  margin-right: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  border: 2px solid #fff;
+}
+.applewatch-photo {
+  width: 220px;
+  max-width: 90vw;
+  border-radius: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.dark-mode .apple-steps li {
+  background: #333;
+  color: #f4f4f4;
+}
+body.dark-mode .apple-steps li::before {
+  background: linear-gradient(135deg, #4a90e2 60%, #007aff 100%);
+  color: #fff;
+  border: 2px solid #232323;
+}
+body.dark-mode .applewatch-photo {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f7;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.title, .description, .footer {
+  color: #555;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.description {
+  font-size: 16px;
+  text-align: center;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.input {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #d1d3d8;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.qrContainer {
+  margin-bottom: 20px;
+}
+
+.qrWrapper {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  display: inline-block;
+  text-align: center;
+}
+
+.downloadButton {
+  padding: 12px 25px;
+  font-size: 16px;
+  background-color: #007aff; 
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.heart {
+  color: #FF69B4; 
+}
+
+.link {
+  color: #007aff; 
+  text-decoration: none;
+}
+
+.top-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-width: 0;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 24px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  overflow-x: visible;
+}
+
+.menu-links {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #007aff; 
+  font-weight: 600;
+}
+
+.menu-links a:hover {
+  text-decoration: underline;
+}
+
+.active-link {
+  color: #ff69b4;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  min-width: 80px;
+  padding-left: 16px;
+  padding-right: 0;
+  background: transparent;
+  z-index: 1100;
+  overflow: visible;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #007aff;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+input:checked + .slider + span {
+  margin-left: 8px;
+}
+
+
+
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+body.dark-mode .container {
+  background-color: #333;
+}
+
+body.dark-mode .input {
+  background-color: #444;
+  color: #f4f4f4;
+  border: 1px solid #555;
+}
+
+body.dark-mode .qrWrapper {
+  background-color: #444;
+}
+
+body.dark-mode .downloadButton {
+  background-color: #1d72b8;
+}
+
+body.dark-mode .footer {
+  color: #f4f4f4;
+}
+
+body.dark-mode .description, body.dark-mode .title {
+  color: #f4f4f4;
+}
+
+body.dark-mode .link {
+  color: #4a90e2;
+}
+
+body.dark-mode .heart {
+  color: #FF69B4;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .top-menu {
+    padding: 10px 8px 10px 8px;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+
+  .theme-toggle {
+    min-width: 60px;
+    padding-left: 8px;
+    overflow: visible;
+  }
+}
