@@ -87,13 +87,84 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
+/* Instructions Page: minimal monochrome numbered steps */
 .apple-hero-steps {
   max-width: 520px;
   margin: 0 auto;
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
   padding: 0 12px;
+}
+
+.apple-hero-steps-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #007aff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+body.dark-mode .apple-hero-steps-title {
+  color: #4a90e2;
+}
+
+.apple-steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.apple-steps li {
+  position: relative;
+  counter-increment: step;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.apple-steps li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.apple-steps li::before {
+  content: counter(step) ". ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #007aff;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* Dark mode adjustments for steps */
+body.dark-mode .apple-steps li {
+  color: #f4f4f4;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-mode .apple-steps li::before {
+  color: #4a90e2;
+}
+
+.instructions-footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.instructions-footer a {
+  color: #007aff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.instructions-footer a:hover {
+  border-color: #007aff;
 }
 
 .apple-hero-input {
@@ -131,10 +202,10 @@ body.dark-mode .apple-hero::before {
 }
 body.dark-mode .apple-hero-title {
   color: #f4f4f4;
-  background: linear-gradient(135deg, #f4f4f4 0%, #4a90e2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 body.dark-mode .apple-hero-subtitle {
   color: #f4f4f4;
