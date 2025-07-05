@@ -1,23 +1,63 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { QRCodeCanvas } from 'qrcode.react';
+import QRCodeStyling from 'qr-code-styling';
 
-const HomeForm = ({ url, setUrl, handleDownload }) => {
-  const qrCanvasRef = useRef(null);
-  const [isGenerating, setIsGenerating] = useState(false);
+const HomeForm = ({ url, setUrl }) => {
+  const qrStylingRef = useRef(null);
+  const qrContainerRef = useRef(null);
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
-    if (url) {
-      setIsGenerating(true);
-      const timer = setTimeout(() => {
-        setIsGenerating(false);
-      }, 300);
-      return () => clearTimeout(timer);
+    // init or update QRCodeStyling
+    if (!qrStylingRef.current) {
+      qrStylingRef.current = new QRCodeStyling({
+        width: 150,
+        height: 150,
+        data: url || '',
+        dotsOptions: {
+          type: 'rounded',
+          gradient: { type: 'linear', rotation: 0, colorStops: [ { offset: 0, color: '#007AFF' }, { offset: 1, color: '#0056B3' } ] }
+        },
+        cornersSquareOptions: { type: 'square', color: '#007AFF' },
+        backgroundOptions: { color: 'transparent' },
+        margin: 10,
+      });
+      qrStylingRef.current.append(qrContainerRef.current);
+    } else {
+      qrStylingRef.current.update({ data: url || '' });
     }
   }, [url]);
 
   const handleDownloadWithFeedback = () => {
-    handleDownload();
+    if (qrStylingRef.current) {
+      qrStylingRef.current.getRawData('png').then(blob => {
+        const img = new Image();
+        img.onload = () => {
+          const qrW = img.width;
+          // total 4:5 aspect ratio (width : height = 4 : 5 => height = 1.25 * width)
+          const totalH = Math.round(qrW * 1.25);
+          // scale QR to 70% for more white margin while retaining resolution
+          const qrSize = qrW * 0.7;
+          // center horizontally and align bottom
+          const xOffset = (qrW - qrSize) / 2;
+          const yOffset = totalH - qrSize;
+          const canvas = document.createElement('canvas');
+          canvas.width = qrW;
+          canvas.height = totalH;
+          const ctx = canvas.getContext('2d');
+          // white background
+          ctx.fillStyle = '#fff';
+          ctx.fillRect(0, 0, qrW, totalH);
+          // draw scaled QR in bottom area
+          ctx.drawImage(img, xOffset, yOffset, qrSize, qrSize);
+          const link = document.createElement('a');
+          link.href = canvas.toDataURL('image/png');
+          link.download = 'qr-watchface.png';
+          link.click();
+          URL.revokeObjectURL(img.src);
+        };
+        img.src = URL.createObjectURL(blob);
+      });
+    }
     setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 2000);
   };
@@ -48,34 +88,12 @@ const HomeForm = ({ url, setUrl, handleDownload }) => {
         )}
       </div>
       
-      <div className="qrContainer" style={{ position: 'relative' }}>
-        {url && (
-          <div ref={qrCanvasRef} className={`qrWrapper ${isGenerating ? 'generating' : ''}`} style={{margin: '0 auto'}}>
-            <QRCodeCanvas value={url} size={150} />
-            {isGenerating && (
-              <div className="qr-loading-overlay" style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: 'rgba(255, 255, 255, 0.8)',
-                borderRadius: '12px'
-              }}>
-                <div className="spinner" />
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-      
+      {/* QR preview always shown */}
+      <div ref={qrContainerRef} className="qrWrapper" style={{ width: 150, height: 150, margin: '16px auto' }} />
       {url && (
         <button 
           onClick={handleDownloadWithFeedback} 
-          className={`downloadButton ${showSuccess ? 'success' : ''}`}
+          className={`downloadButton ${showSuccess ? 'success' : ''}`} 
           style={{fontSize: '1.08rem', padding: '12px 32px', position: 'relative'}}
         >
           <span className="button-text">
