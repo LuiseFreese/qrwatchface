@@ -8,6 +8,8 @@ A modern, Apple-inspired web app for generating QR codes to use as custom Apple 
 
 QR Watchface lets you create a QR code for any URL or text and display it on your Apple Watch face. This makes it easy to share links, contact info, event details, or anything else scannable: right from your wrist. Why do we need an app for that? If you want to not only show your QR code but also the time, we need to employ some sorcery 🪄 - this is what this app does: Adding some space around the QR code so that it fits your watch.
 
+![watchface website](/media/qrwatchface-screenshot.png)
+
 ## Key Features
 
 - Instantly generate a QR code for any input
