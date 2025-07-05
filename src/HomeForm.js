@@ -7,7 +7,7 @@ const HomeForm = ({ url, setUrl }) => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   useEffect(() => {
-    // init or update QRCodeStyling
+    // initialize instance once
     if (!qrStylingRef.current) {
       qrStylingRef.current = new QRCodeStyling({
         width: 150,
@@ -21,9 +21,12 @@ const HomeForm = ({ url, setUrl }) => {
         backgroundOptions: { color: 'transparent' },
         margin: 10,
       });
+    }
+    // update data and render
+    qrStylingRef.current.update({ data: url || '' });
+    if (qrContainerRef.current) {
+      qrContainerRef.current.innerHTML = '';
       qrStylingRef.current.append(qrContainerRef.current);
-    } else {
-      qrStylingRef.current.update({ data: url || '' });
     }
   }, [url]);
 
@@ -88,9 +91,15 @@ const HomeForm = ({ url, setUrl }) => {
         )}
       </div>
       
-      {/* QR preview always shown */}
-      <div ref={qrContainerRef} className="qrWrapper" style={{ width: 150, height: 150, margin: '16px auto' }} />
-      {url && (
+      {/* QR preview live as you type (only if input present) */}
+      {url.length > 0 && (
+        <div
+          ref={qrContainerRef}
+          className="qrWrapper"
+          style={{ width: 150, height: 150, margin: '16px auto' }}
+        />
+      )}
+      {url.length > 0 && (
         <button 
           onClick={handleDownloadWithFeedback} 
           className={`downloadButton ${showSuccess ? 'success' : ''}`} 
